@@ -41,7 +41,7 @@ public class PetTest {
     private void testInitialState() {
         System.out.println("테스트 1: 초기 상태 확인");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             
             assertEquals("타마", pet.getName(), "이름이 올바르게 설정되어야 합니다");
             assertEquals(50, pet.getHunger(), "초기 배고픔은 50이어야 합니다");
@@ -58,7 +58,7 @@ public class PetTest {
     private void testFeed() {
         System.out.println("테스트 2: 먹이주기 기능");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             int initialHunger = pet.getHunger();
             int initialHappiness = pet.getHappiness();
             
@@ -76,7 +76,7 @@ public class PetTest {
     private void testPlay() {
         System.out.println("테스트 3: 놀아주기 기능");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             int initialHappiness = pet.getHappiness();
             int initialEnergy = pet.getEnergy();
             
@@ -94,7 +94,7 @@ public class PetTest {
     private void testPlayWithLowEnergy() {
         System.out.println("테스트 4: 에너지 부족 시 놀아주기");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             
             // 에너지를 낮춤
             for (int i = 0; i < 5; i++) {
@@ -116,7 +116,7 @@ public class PetTest {
     private void testSleep() {
         System.out.println("테스트 5: 재우기 기능");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             pet.play(); // 에너지 소모
             int initialEnergy = pet.getEnergy();
             
@@ -133,7 +133,7 @@ public class PetTest {
     private void testTimePasses() {
         System.out.println("테스트 6: 시간 경과");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             int initialHunger = pet.getHunger();
             int initialHappiness = pet.getHappiness();
             int initialEnergy = pet.getEnergy();
@@ -153,7 +153,7 @@ public class PetTest {
     private void testDeathByHunger() {
         System.out.println("테스트 7: 배고픔으로 인한 사망");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             
             // 배고픔을 100까지 증가시킴
             for (int i = 0; i < 20; i++) {
@@ -171,7 +171,7 @@ public class PetTest {
     private void testDeathByUnhappiness() {
         System.out.println("테스트 8: 불행으로 인한 사망");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             
             // 에너지를 0으로 만들고 계속 놀아달라고 함
             for (int i = 0; i < 5; i++) {
@@ -195,7 +195,7 @@ public class PetTest {
     private void testMultipleActions() {
         System.out.println("테스트 9: 복합적인 행동");
         try {
-            Pet pet = new PetImplSample("타마");
+            Pet pet = new PetImpl("타마");
             
             // 여러 행동을 수행
             pet.feed();

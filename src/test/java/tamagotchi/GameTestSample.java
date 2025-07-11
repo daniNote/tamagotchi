@@ -35,7 +35,7 @@ public class GameTestSample {
     private void testGameInitialization() {
         System.out.println("테스트 1: 게임 초기화");
         try {
-            Game game = new GameImplSample();
+            Game game = new GameImpl();
             
             assertFalse(game.isGameRunning(), "초기에는 게임이 실행 중이 아니어야 합니다");
             assertNull(game.getPet(), "초기에는 펫이 없어야 합니다");
@@ -49,7 +49,7 @@ public class GameTestSample {
     private void testGameStart() {
         System.out.println("테스트 2: 게임 시작");
         try {
-            Game game = new GameImplSample();
+            Game game = new GameImpl();
             game.start("테스트펫");
             
             assertTrue(game.isGameRunning(), "게임 시작 후 실행 중이어야 합니다");
@@ -65,7 +65,7 @@ public class GameTestSample {
     private void testFeedingInGame() {
         System.out.println("테스트 3: 게임 내 먹이주기");
         try {
-            Game game = new GameImplSample();
+            Game game = new GameImpl();
             game.start("테스트펫");
             
             int initialHunger = game.getPet().getHunger();
@@ -83,7 +83,7 @@ public class GameTestSample {
     private void testPlayingInGame() {
         System.out.println("테스트 4: 게임 내 놀아주기");
         try {
-            Game game = new GameImplSample();
+            Game game = new GameImpl();
             game.start("테스트펫");
             
             int initialHappiness = game.getPet().getHappiness();
@@ -101,7 +101,7 @@ public class GameTestSample {
     private void testSleepingInGame() {
         System.out.println("테스트 5: 게임 내 재우기");
         try {
-            Game game = new GameImplSample();
+            Game game = new GameImpl();
             game.start("테스트펫");
             
             // 에너지를 소모시킴
@@ -122,7 +122,7 @@ public class GameTestSample {
     private void testTimeAdvancement() {
         System.out.println("테스트 6: 시간 진행");
         try {
-            Game game = new GameImplSample();
+            Game game = new GameImpl();
             game.start("테스트펫");
             
             int initialHunger = game.getPet().getHunger();
@@ -141,7 +141,7 @@ public class GameTestSample {
     private void testGameOverByDeath() {
         System.out.println("테스트 7: 펫 사망으로 게임 종료");
         try {
-            Game game = new GameImplSample();
+            Game game = new GameImpl();
             game.start("테스트펫");
             
             // 펫을 죽게 만듦
